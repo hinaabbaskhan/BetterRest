@@ -34,6 +34,12 @@ struct ContentView: View {
                 Section(header: Text("Desired amount of sleep")) {
                     Stepper("\(sleepAmount.formatted()) hours", value: $sleepAmount, in: 4...12, step: 0.25)
                 }
+                Section(header: Text("Daily coffee intake")) {
+                    Picker(selection: $coffeeAmount, label: Text("Cup")) {
+                        ForEach(1..<20, id: \.self) { cup in
+                            Text("^[\(cup) cup](inflect: true)").tag(cup)
+                        }
+                    }
                 }
             .navigationTitle("BetterRest")
                 .toolbar {

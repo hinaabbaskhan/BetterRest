@@ -15,6 +15,7 @@ struct ContentView: View {
     @State private var alertTitle = ""
     @State private var alertMessage = ""
     @State private var showingAlert = false
+    @State private var recommendedBedtime = ""
 
     static var defaultWakeTime: Date {
         var components = DateComponents()
@@ -33,12 +34,6 @@ struct ContentView: View {
                 Section(header: Text("Desired amount of sleep")) {
                     Stepper("\(sleepAmount.formatted()) hours", value: $sleepAmount, in: 4...12, step: 0.25)
                 }
-                VStack(alignment: .leading, spacing: 0){
-                    
-                    Text("Daily coffee intake")
-                        .font(.headline)
-                    
-                    Stepper("^[\(coffeeAmount) cup](inflect: true)", value: $coffeeAmount, in: 1...20)
                 }
             .navigationTitle("BetterRest")
                 .toolbar {
@@ -48,6 +43,9 @@ struct ContentView: View {
                 } message: {
                     Text(alertMessage)
                 }
+            Text(recommendedBedtime)
+                            .font(.title)
+                            .padding()
         }
     }
     
@@ -65,6 +63,7 @@ struct ContentView: View {
             let sleepTime = wakeUp - prediction.actualSleep
             alertTitle = "Your ideal bedtime is…"
             alertMessage = sleepTime.formatted(date: .omitted, time: .shortened)
+            recommendedBedtime = "Your ideal bedtime is \(sleepTime.formatted(date: .omitted, time: .shortened))"
 
             
         }catch{

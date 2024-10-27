@@ -20,3 +20,5 @@ In this project, you will learn:
 - The basics of Core ML and how to integrate machine learning into your app.
 - How to use regression analysis to make predictions based on user data.
   
+https://github.com/user-attachments/assets/561cdee7-f653-4111-937b-ff7b9429537f
+

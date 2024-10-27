@@ -1,12 +1,22 @@
 # BetterRest
 In this App we will look into one of the true power features of iOS development: machine learning (ML).
 
-This App is designed to help coffee drinkers get a good night’s sleep by asking them three questions:
+This App is designed to help coffee drinkers get a good night’s sleep by asking them three questions, the app uses machine learning to provide personalized bedtime recommendations. While this project may seem straightforward, it introduces you to the powerful world of Core ML and machine learning on iOS.
 
-- When do they want to wake up?
-- Roughly how many hours of sleep do they want?
-- How many cups of coffee do they drink per day?
 
-Once we have those three values, we’ll feed them into **Core ML** to get a result telling us when they ought to go to bed. If you think about it, there are billions of possible answers – all the various wake times multiplied by all the number of sleep hours, multiplied again by the full range of coffee amounts.
+## Features
+- **User Input:** The app will prompt users to enter:
+  - Desired wake-up time
+  - Desired hours of sleep
+  - Daily coffee consumption (in cups)
+- **Machine Learning Integration:** Utilize Core ML to analyze user input and provide accurate bedtime suggestions based on previously trained data. Once we have those three values, we’ll feed them into **Core ML** to get a result telling us when they ought to go to bed. 
+- **Privacy-Focused:** All predictions are made on-device, ensuring user privacy.
 
-That’s where machine learning comes in: using a technique called _regression analysis_ we can ask the computer to come up with an algorithm able to represent all our data. This in turn allows it to apply the algorithm to fresh data it hasn’t seen before, and get accurate results.
+
+### Learning Objectives
+In this project, you will learn:
+
+- How to build a simple forms-based app using SwiftUI.
+- The basics of Core ML and how to integrate machine learning into your app.
+- How to use regression analysis to make predictions based on user data.
+  
